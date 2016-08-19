@@ -1,0 +1,57 @@
+{
+    "name": "async_extra",
+    "optionalDependencies": {},
+    "exportedEnvVars": {
+        "PATH": {
+            "global": true,
+            "resolveAsRelativePath": true,
+            "globalCollisionBehavior": "joinPath",
+            "val": "./_build/ocamlfind/bin"
+        },
+        "version": {
+            "global": true,
+            "globalCollisionBehavior": "clobber",
+            "val": "113.33.03"
+        },
+        "async_extra_version": {
+            "global": true,
+            "globalCollisionBehavior": "clobber",
+            "val": "113.33.03"
+        },
+        "FINDLIB": {
+            "global": true,
+            "resolveAsRelativePath": true,
+            "globalCollisionBehavior": "joinPath",
+            "val": "./_build/ocamlfind/lib"
+        }
+    },
+    "version": "113.33.03",
+    "dependencies": {
+        "dependency-env": "https://github.com/npm-ml/dependency-env.git",
+        "substs": "https://github.com/yunxing/substs.git",
+        "ppx_jane": "https://github.com/npm-opam/ppx_jane",
+        "variantslib": "https://github.com/npm-opam/variantslib",
+        "sexplib": "https://github.com/npm-opam/sexplib",
+        "bin_prot": "https://github.com/npm-opam/bin_prot",
+        "opam-installer-bin": "https://github.com/yunxing/opam-installer-bin.git",
+        "core": "https://github.com/npm-opam/core",
+        "ocamlbuild": "https://github.com/npm-opam/ocamlbuild",
+        "ppx_assert": "https://github.com/npm-opam/ppx_assert",
+        "ocamlfind": "https://github.com/npm-opam/ocamlfind",
+        "ppx_bench": "https://github.com/npm-opam/ppx_bench",
+        "async_unix": "https://github.com/npm-opam/async_unix",
+        "nopam": "https://github.com/yunxing/nopam.git",
+        "js-build-tools": "https://github.com/npm-opam/js-build-tools",
+        "ppx_driver": "https://github.com/npm-opam/ppx_driver",
+        "async_rpc_kernel": "https://github.com/npm-opam/async_rpc_kernel",
+        "ppx_inline_test": "https://github.com/npm-opam/ppx_inline_test",
+        "ocaml": "https://github.com/npm-opam/ocaml.git#npm-4.02.3",
+        "async_kernel": "https://github.com/npm-opam/async_kernel",
+        "ppx_expect": "https://github.com/npm-opam/ppx_expect",
+        "fieldslib": "https://github.com/npm-opam/fieldslib",
+        "typerep": "https://github.com/npm-opam/typerep"
+    },
+    "scripts": {
+        "postinstall": "eval $(dependencyEnv) && nopam && ./configure --prefix $opam_prefix && make && (opam-installer --prefix=$opam_prefix || true) && injectOpamEnvs"
+    }
+}
