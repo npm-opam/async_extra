@@ -1,0 +1,84 @@
+<**/*.ml{,i}>: warn(-40), no_alias_deps
+<**/*>: thread
+# This prevents the implicit addition of -ppx options by ocamlfind
+<**/*>: predicate(custom_ppx)
+<src/*.ml>: for-pack(Async_extra)
+<src/*.ml{,i}>: pp(ppx-jane -dump-ast -inline-test-drop -bench-drop -inline-test-lib fake_for_drop)
+# OASIS_START
+# DO NOT EDIT (digest: 0357367b5685f6b0e8e042e938498bb1)
+# Ignore VCS directories, you can use the same kind of rule outside
+# OASIS_START/STOP if you want to exclude directories that contains
+# useless stuff for the build process
+true: annot, bin_annot
+<**/.svn>: -traverse
+<**/.svn>: not_hygienic
+".bzr": -traverse
+".bzr": not_hygienic
+".hg": -traverse
+".hg": not_hygienic
+".git": -traverse
+".git": not_hygienic
+"_darcs": -traverse
+"_darcs": not_hygienic
+# Library async_extra
+"src/async_extra.cmxs": use_async_extra
+"src/bus.cmx": for-pack(Async_extra)
+"src/command.cmx": for-pack(Async_extra)
+"src/cpu_usage.cmx": for-pack(Async_extra)
+"src/dynamic_port_writer.cmx": for-pack(Async_extra)
+"src/file_tail.cmx": for-pack(Async_extra)
+"src/file_writer.cmx": for-pack(Async_extra)
+"src/import.cmx": for-pack(Async_extra)
+"src/limiter.cmx": for-pack(Async_extra)
+"src/limiter_unit_tests.cmx": for-pack(Async_extra)
+"src/lock_file.cmx": for-pack(Async_extra)
+"src/mvar.cmx": for-pack(Async_extra)
+"src/mvar_unit_tests.cmx": for-pack(Async_extra)
+"src/persistent_connection.cmx": for-pack(Async_extra)
+"src/persistent_connection_intf.cmx": for-pack(Async_extra)
+"src/persistent_singleton.cmx": for-pack(Async_extra)
+"src/rpc.cmx": for-pack(Async_extra)
+"src/rpc_transport.cmx": for-pack(Async_extra)
+"src/rpc_transport_low_latency.cmx": for-pack(Async_extra)
+"src/schedule.cmx": for-pack(Async_extra)
+"src/schedule_unit_tests.cmx": for-pack(Async_extra)
+"src/sequencer_table.cmx": for-pack(Async_extra)
+"src/std.cmx": for-pack(Async_extra)
+"src/tcp.cmx": for-pack(Async_extra)
+"src/tcp_file.cmx": for-pack(Async_extra)
+"src/typed_tcp.cmx": for-pack(Async_extra)
+"src/typed_tcp_intf.cmx": for-pack(Async_extra)
+"src/udp.cmx": for-pack(Async_extra)
+"src/unpack_sequence.cmx": for-pack(Async_extra)
+"src/user_and_group.cmx": for-pack(Async_extra)
+"src/versioned_typed_tcp.cmx": for-pack(Async_extra)
+"src/versioned_typed_tcp_intf.cmx": for-pack(Async_extra)
+"src/weak_hashtbl.cmx": for-pack(Async_extra)
+<src/async_extra.{cma,cmxa}>: use_libasync_extra_stubs
+<src/*.ml{,i,y}>: package(async_kernel)
+<src/*.ml{,i,y}>: package(async_rpc_kernel)
+<src/*.ml{,i,y}>: package(async_unix)
+<src/*.ml{,i,y}>: package(bin_prot)
+<src/*.ml{,i,y}>: package(core)
+<src/*.ml{,i,y}>: package(fieldslib)
+<src/*.ml{,i,y}>: package(ppx_assert.runtime-lib)
+<src/*.ml{,i,y}>: package(ppx_bench.runtime-lib)
+<src/*.ml{,i,y}>: package(ppx_expect.collector)
+<src/*.ml{,i,y}>: package(ppx_inline_test.runtime-lib)
+<src/*.ml{,i,y}>: package(sexplib)
+<src/*.ml{,i,y}>: package(typerep)
+<src/*.ml{,i,y}>: package(variantslib)
+"src/rpc_transport_low_latency_stubs.c": package(async_kernel)
+"src/rpc_transport_low_latency_stubs.c": package(async_rpc_kernel)
+"src/rpc_transport_low_latency_stubs.c": package(async_unix)
+"src/rpc_transport_low_latency_stubs.c": package(bin_prot)
+"src/rpc_transport_low_latency_stubs.c": package(core)
+"src/rpc_transport_low_latency_stubs.c": package(fieldslib)
+"src/rpc_transport_low_latency_stubs.c": package(ppx_assert.runtime-lib)
+"src/rpc_transport_low_latency_stubs.c": package(ppx_bench.runtime-lib)
+"src/rpc_transport_low_latency_stubs.c": package(ppx_expect.collector)
+"src/rpc_transport_low_latency_stubs.c": package(ppx_inline_test.runtime-lib)
+"src/rpc_transport_low_latency_stubs.c": package(sexplib)
+"src/rpc_transport_low_latency_stubs.c": package(typerep)
+"src/rpc_transport_low_latency_stubs.c": package(variantslib)
+# OASIS_STOP
